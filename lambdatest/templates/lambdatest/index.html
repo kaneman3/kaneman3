@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta chrset="utf-8">
+    <title>{{htitle}}</title>
+    <link rel="stylesheet" type="text/css"
+        href="{% static 'lambdatest/css/style.css' %}" />
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <p>{{message | safe}}</p>
+    <table>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        {{ form1.as_table}}
+        <tr><td></td><td><input type="submit" name = "lamdacall" value="Lambdaを呼び出す"></td></tr>
+    </form>
+    <table>
+    <table>
+        <tr>
+            <td> {{content_text}}</td>
+        </tr>
+    </table>
+</body>
+</html>
+
