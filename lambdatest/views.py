@@ -9,7 +9,7 @@ def index(request):
         'htitle':'ichiA Django',
         'title':'Lambda接続テスト',
         'message':'Lamda戻り',
-        'content_text': 'ボタンを押すとlambdaの戻り値が来ます',
+        'content_text': 'ボタンを押すとlambdaの戻り値が来ますtesthub',
         'form1' : InputParam(),
         }
 
@@ -25,7 +25,7 @@ def index(request):
         api_val = requests.post(url, params = val , headers=headers)
 
         params['content_text'] = api_val.text
-        params['form1'] = InputParam()
+        params['form1'] = InputParam(request.POST)
         return render(request, 'lambdatest/index.html',params) 
 
     else:
