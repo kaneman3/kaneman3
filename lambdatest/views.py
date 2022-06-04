@@ -27,7 +27,7 @@ def index(request):
         params['content_text'] = api_val.text
         params['form1'] = InputParam(request.POST)
         return render(request, 'lambdatest/index.html',params) 
-
+        #githubでテキスト入力
     else:
         params['content_text'] = 'ボタンを押すとlambdaの戻り値が来ます（未呼び出し）'
         return render(request, 'lambdatest/index.html',params) 
