@@ -14,7 +14,7 @@
     <form action="{% url 'index' %}" method="post">
         {% csrf_token %}
         {{ form1.as_table}}
-        <tr><td></td><td><input type="submit" name = "lamdacall" value="Lambdaを呼び出す"></td></tr>
+        <tr><td></td><td><input type="submit" name = "lamdacall" value="LambdaへPOSTする"></td></tr>
     </form>
     <table>
     <table>
