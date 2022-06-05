@@ -18,13 +18,15 @@ def index(request):
         headers = {'x-api-key': 'aspijTnwG7MXJwVBzAbM3IxJ8Vp73AI2Ya5OSEv5'}
         x = request.POST['Param1']
         y = request.POST['Param2']
+        comment = request.POST['Param3']
+        
         val = {"x" : x , "y" : y}
         url = "https://3dul2tnnsg.execute-api.us-east-2.amazonaws.com/KK_Test/HelloLambda"
 
         #api_val = requests.get(url, params = val , headers=headers)
         api_val = requests.post(url, params = val , headers=headers)
 
-        params['content_text'] = api_val.text
+        params['content_text'] = commnet + api_val.text
         params['form1'] = InputParam(request.POST)
         return render(request, 'lambdatest/index.html',params) 
         #githubでテキスト入力
