@@ -26,7 +26,7 @@ def index(request):
         #api_val = requests.get(url, params = val , headers=headers)
         api_val = requests.post(url, params = val , headers=headers)
 
-        params['content_text'] = commnet + api_val.text
+        params['content_text'] = comment + api_val.text
         params['form1'] = InputParam(request.POST)
         return render(request, 'lambdatest/index.html',params) 
         #githubでテキスト入力
